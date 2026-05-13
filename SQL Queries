@@ -53,7 +53,7 @@ WITH rank_revenue AS (
     SELECT 
         order_year AS y, 
         product_category_name_english AS category, 
-        SUM(total_sales) AS revenue, -- Tính t?ng doanh thu
+        SUM(total_sales) AS revenue, -- TÃ­nh t?ng doanh thu
         RANK() OVER (
             PARTITION BY order_year 
             ORDER BY SUM(total_sales) DESC
